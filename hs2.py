@@ -1,8 +1,11 @@
-config = open(r'SpecControlSettings.json', 'r')
-#Reads the config file
+config = open(r'halo.txt', 'r')
+
+# Reads the config file
+
 settings = config.readlines()
 
-#changes the settings for the best fps
+# changes the settings for the best fps
+
 settings[47] = """        "value": 960 """
 settings[51] = """        "value": 960 """
 settings[55] = """        "value": 0 """
@@ -16,5 +19,5 @@ settings[571] = """        "value": "Low" """
 settings[599] = """        "value": "Low" """
 settings[607] = """        "value": "Low" """
 settings[623] = """        "value": "Low" """
-with open(r'SpecControlSettings.json', 'w') as file:
+with open(r'halo.txt', 'w') as file:
     file.writelines(settings)
