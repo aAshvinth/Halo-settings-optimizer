@@ -1,15 +1,14 @@
-config = open(r'halo.txt', 'r')
+with open(r'halo.txt', 'r',encoding='utf-8') as file
 
 # Reads the config file
 
-settings = config.readlines()
+settings = file.readlines()
 fps = input('Input your monitors refresh rate:')
 
 # Changes the settings in the config file
 
 settings[47] = """        "value": """ + fps
-settings[535] = \
-    """        "value": "Low                                                                                                                                                                                      " """
+settings[535] = """        "value": "Low" """                                                                                                                                                                                      " """
 settings[539] = """        "value": "Low" """
 settings[543] = """        "value": "Low" """
 settings[555] = """        "value": "Low" """
