@@ -1,11 +1,11 @@
-config = open(r'SpecControlSettings.json', 'r')
+config = open(r'halo.txt', 'r')
 #Reads the config file
 settings = config.readlines()
 fps = input('Input your monitors refresh rate:')
 #Changes the settings in the config file
 
-settings[47] = """        "value":""" + fps
-settings[535] = """        "value": "Low" """
+settings[47] = """        "value": """ + fps
+settings[535] = """        "value": "Low                                                                                                                                                                                      " """
 settings[539] = """        "value": "Low" """
 settings[543] = """        "value": "Low" """
 settings[555] = """        "value": "Low" """
