@@ -1,4 +1,4 @@
-with open('halo.txt', 'r', encoding='utf-8') as file:
+with open('SpecControlSettings.json', 'r', encoding='utf-8') as file:
     settings = file.readlines()
 fps = input('Input your monitors refresh rate:')
 
@@ -15,5 +15,5 @@ settings[599] = '        "value": "Low" \n'
 settings[607] = '        "value": "Low" \n'
 settings[623] = '        "value": "Low" \n'
 
-with open('halo.txt', 'w', encoding='utf-8') as file:
+with open('SpecControlSettings.json', 'w', encoding='utf-8') as file:
     file.writelines(settings)
