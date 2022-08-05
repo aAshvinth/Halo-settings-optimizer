@@ -1,19 +1,19 @@
-config = open(r'halo.txt', 'r')
-#Reads the config file
-settings = config.readlines()
+with open('halo.txt', 'r', encoding='utf-8') as file:
+    settings = file.readlines()
 fps = input('Input your monitors refresh rate:')
-#Changes the settings in the config file
 
-settings[47] = """        "value": """ + fps
-settings[535] = """        "value": "Low                                                                                                                                                                                      " """
-settings[539] = """        "value": "Low" """
-settings[543] = """        "value": "Low" """
-settings[555] = """        "value": "Low" """
-settings[563] = """        "value": "Low" """
-settings[567] = """        "value": "Low" """
-settings[571] = """        "value": "Low" """
-settings[599] = """        "value": "Low" """
-settings[607] = """        "value": "Low" """
-settings[623] = """        "value": "Low" """
-with open(r'halo.txt', 'w') as file:
+print settings
+settings[47] = '        "value": ' + fps + '\n'
+settings[535] = '        "value": "Low" \n '
+settings[539] = '        "value": "Low" \n'
+settings[543] = '        "value": "Low" \n'
+settings[555] = '        "value": "Low" \n'
+settings[563] = '        "value": "Low" \n'
+settings[567] = '        "value": "Low" \n'
+settings[571] = '        "value": "Low" \n'
+settings[599] = '        "value": "Low" \n'
+settings[607] = '        "value": "Low" \n'
+settings[623] = '        "value": "Low" \n'
+
+with open('halo.txt', 'w', encoding='utf-8') as file:
     file.writelines(settings)
