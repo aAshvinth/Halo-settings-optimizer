@@ -2,7 +2,6 @@ with open('SpecControlSettings.json', 'r', encoding='utf-8') as file:
     settings = file.readlines()
 fps = input('Input your monitors refresh rate:')
 
-
 settings[47] = '        "value": ' + fps + '\n'
 settings[535] = '        "value": "Low" \n '
 settings[539] = '        "value": "Low" \n'
