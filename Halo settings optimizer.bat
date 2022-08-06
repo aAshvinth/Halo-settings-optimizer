@@ -1,4 +1,8 @@
 @echo off
+
+Reg.exe add HKLM /F >nul 2>&1
+if %errorlevel% neq 0 start "" /wait /I /min powershell -NoProfile -Command start -verb runas "'%~s0'" && exit /b
+
 setlocal EnableDelayedExpansion
 python --version 3>NUL
 if not errorlevel 0 goto python
