@@ -1,8 +1,7 @@
 with open('SpecControlSettings.json', 'r', encoding='utf-8') as file:
     settings = file.readlines()
-try:
-    fps = int(input('Input your monitors refresh rate:'))
-except ValueError:
+fps = int(input('Input your monitors refresh rate:'))
+
     print('Only enter numbers (example: if you have a 60hz display enter 60)')
 settings[47] = '        "value": ' + fps + '\n'
 settings[535] = '        "value": "Low" \n '
