@@ -24,12 +24,13 @@ if %chocie% == 2 goto Halo2
 ECHO "%choice%" is not valid, try again
 
 :Halo
+echo.
+echo Only enter numbers (example: if you have a 60hz display enter 60)
+echo.
 powershell Invoke-WebRequest "https://raw.githubusercontent.com/aAshvinth/Halo-settings-optmizer/main/hs.py" -OutFile "%temp%\hs.py"
 
 xcopy "%userprofile%\AppData\Local\HaloInfinite\Settings\SpecControlSettings.json" "%temp%\SpecControlSettings.json*" /Q > nul
 cd %temp%
-echo.
-echo Only enter numbers (example: if you have a 60hz display enter 60)
 python hs.py
 xcopy "%temp%\SpecControlSettings.json" "%userprofile%\AppData\Local\HaloInfinite\Settings\SpecControlSettings.json*" /y /Q > nul
 del "%temp%\hs.py" 
