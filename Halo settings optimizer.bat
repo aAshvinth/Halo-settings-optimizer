@@ -53,9 +53,6 @@ xcopy "%userprofile%\AppData\Local\HaloInfinite\Settings\SpecControlSettings.jso
 cd %temp%
 python hs2.py
 xcopy "%temp%\SpecControlSettings.json" "%userprofile%\AppData\Local\HaloInfinite\Settings\SpecControlSettings.json*" /y /Q > nul 
-del "%temp%\hs2.py"
-del "%temp%\SpecControlSettings.json" 
-
 goto end2
 
 :end
@@ -68,6 +65,9 @@ exit
 
 :end2
 TITLE Success!
+cd %temp%
+del "%temp%\hs2.py"
+del "%temp%\SpecControlSettings.json" 
 msg "%username%" HaloInfinite has been optimized! [*If you face consistent screen tearing in the game turn Vsync On]
 exit
 
