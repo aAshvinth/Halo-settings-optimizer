@@ -6,5 +6,5 @@
 
 ![GUI](https://user-images.githubusercontent.com/106897514/183282414-e1d33bb7-a7ef-47a0-9c66-a2b0435f3b6c.png "Halo optimizer")
  
- <p>There are 2 options. Option 1 is recommended for balanced performance to visuals ratio. That being said for the best fps option 2 doesn't focus alot on balancing the visuals<p/>
+ <p>There are 2 options. Option 1 is recommended for balanced performance to visuals ratio. That being said for the best fps option 2 doesn't focus alot on balancing the visuals.<p/>
 
