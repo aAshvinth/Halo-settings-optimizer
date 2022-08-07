@@ -41,7 +41,6 @@ xcopy "%userprofile%\AppData\Local\HaloInfinite\Settings\SpecControlSettings.jso
 cd %temp%
 python hs.py
 xcopy "%temp%\SpecControlSettings.json" "%userprofile%\AppData\Local\HaloInfinite\Settings\SpecControlSettings.json*" /y /Q > nul
-
 goto end
 
 
