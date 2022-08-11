@@ -20,11 +20,9 @@ if errorlevel 1 goto error else goto interface
 
 
 setlocal EnableDelayedExpansion
-python3.exe
-if %ERRORLEVEL% neq 0 (
-    goto python
-    
-)
+set py=true
+where /q python.exe || (set pythoninstalled=false)
+if py == False goto python
 
 
 :interface
