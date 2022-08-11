@@ -107,7 +107,8 @@ echo.
 echo This may take a few moments please wait.
 cd %temp%
 %CD%\python-3.10.6-amd64.exe /quiet InstallAllUsers=0 PrependPath=1 Include_test=0
-goto checks
+msg %userprofile% Python has been installed (Restart your device and reopen.)
+exit
 
 
 :error
