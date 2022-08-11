@@ -3,6 +3,14 @@
 Reg.exe add HKLM /F >nul 2>&1
 if %errorlevel% neq 0 start "" /wait /I /min powershell -NoProfile -Command start -verb runas "'%~s0'" && exit /b
 
+if EXIST "%userprofile%\AppData\Local\HaloInfinite\Settings\SpecControlSettings.json" (
+    goto interface
+) ELSE (
+    goto error2 (
+     
+    )
+)   
+
 
 
 Ping www.google.com -n 1 -w 1200 > null
@@ -12,8 +20,11 @@ if errorlevel 1 goto error else goto interface
 
 
 setlocal EnableDelayedExpansion
-python --version 3>NUL
-if not errorlevel 0 goto python
+python3.exe
+if %ERRORLEVEL% neq 0 (
+    goto python
+    
+)
 
 
 :interface
@@ -91,7 +102,7 @@ TITLE Downloading Python 3
 color 06
 powershell Invoke-WebRequest "https://www.python.org/ftp/python/3.10.6/python-3.10.6-amd64.exe" -OutFile "%temp%\python-3.10.6-amd64.exe"
 cd %temp%
-start python-3.10.6-amd64.exe
+%CD%\python-3.10.6-amd64.exe /quiet InstallAllUsers=0 PrependPath=1 Include_test=0
 msg "%username%" Continue with the installation prompt and reopen
 exit
 
@@ -120,4 +131,16 @@ echo.
 pause
 exit
 
+:error2
+cls
+TITLE ERROR!
+color 06
+echo.
+echo ERROR! HaloInfinite not detected. Make sure you ran it atleast once.
+echo.
+echo.
+echo.
+echo.
+pause
+exit
 
