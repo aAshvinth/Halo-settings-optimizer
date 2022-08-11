@@ -1,5 +1,11 @@
 @echo off
 
+set py=true
+where /q python.exe || (set py=false)
+if %py%==true (goto checks) else (goto python)
+pause
+
+:checks
 Reg.exe add HKLM /F >nul 2>&1
 if %errorlevel% neq 0 start "" /wait /I /min powershell -NoProfile -Command start -verb runas "'%~s0'" && exit /b
 
@@ -11,18 +17,11 @@ if EXIST "%userprofile%\AppData\Local\HaloInfinite\Settings\SpecControlSettings.
     )
 )   
 
-
-
 Ping www.google.com -n 1 -w 1200 > null
 
 if errorlevel 1 goto error else goto interface
 
-
-
 setlocal EnableDelayedExpansion
-set py=true
-where /q python.exe || (set pythoninstalled=false)
-if py == False goto python
 
 
 :interface
@@ -82,6 +81,8 @@ exit
 
 
 :python
+Reg.exe add HKLM /F >nul 2>&1
+if %errorlevel% neq 0 start "" /wait /I /min powershell -NoProfile -Command start -verb runas "'%~s0'" && exit /b
 TITLE Download python 3
 color 06
 echo.
