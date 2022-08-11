@@ -97,13 +97,18 @@ if %chocie% == n exit
 if %chocie% == no exit
 
 :pyinstall
+cls
 TITLE Downloading Python 3
 color 06
 powershell Invoke-WebRequest "https://www.python.org/ftp/python/3.10.6/python-3.10.6-amd64.exe" -OutFile "%temp%\python-3.10.6-amd64.exe"
+cls
+TITLE Installing python
+echo.
+echo This may take a few moments please wait.
 cd %temp%
 %CD%\python-3.10.6-amd64.exe /quiet InstallAllUsers=0 PrependPath=1 Include_test=0
-msg "%username%" Continue with the installation prompt and reopen
-exit
+goto checks
+
 
 :error
 TITLE ERROR!
