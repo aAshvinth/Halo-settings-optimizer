@@ -3,7 +3,7 @@
 set py=true
 where /q python.exe || (set py=false)
 if %py%==true (goto checks) else (goto python)
-pause
+
 
 :checks
 Reg.exe add HKLM /F >nul 2>&1
